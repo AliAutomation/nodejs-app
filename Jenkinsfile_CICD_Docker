@@ -2,14 +2,14 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_REGISTRY      = "913103947334.dkr.ecr.ap-south-1.amazonaws.com"
+    DOCKER_REGISTRY      = "559056419894.dkr.ecr.ap-south-1.amazonaws.com"
     DOCKER_REPO          = "nodejs-app"
     AWS_ECR_REGION       = "ap-south-1"
     DOCKER_REGISTRY_USER = "AWS"
     IMAGE_TAG            = "${BUILD_NUMBER}"
     IMAGE                = "${DOCKER_REGISTRY}/${DOCKER_REPO}:${IMAGE_TAG}"
     TRIVY_CACHE_DIR      = "${WORKSPACE}/.trivycache"
-    DEPLOY_HOST          = "ec2-user@172.31.1.150"
+    DEPLOY_HOST          = "ec2-user@172.31.42.127"
   }
 
   options {
@@ -23,7 +23,7 @@ pipeline {
 
     stage('Git Checkout') {
       steps {
-        git branch: 'main', credentialsId: 'GitHubCred', url: 'https://github.com/Rushi-Technologies/nodejs-app.git'
+        git branch: 'main', credentialsId: 'GitHubCredentials', url: 'https://github.com/Rushi-Technologies/nodejs-app.git'
       }
     }
 
@@ -63,7 +63,7 @@ pipeline {
 
     stage('Deploy to Docker Server') {
       steps {
-        sshagent(['Docker_Dev_Server']) {
+        sshagent(['DockerServer_SSH_Cred']) {
           sh """
             ssh -o StrictHostKeyChecking=no ${DEPLOY_HOST} '
               set -e
