@@ -2,12 +2,13 @@
   "trainer": {
     "name": "Balaji Reddy Lachhanagari",
     "email": "rushitechnoligesbanglore@gmail.com",
-    "phone": "+91-9900012028"
+    "phone": "+91-9900012028,+91-8296242028"
   },
   "courses": [
     "DevOps Master Program",
     "AWS with Terraform",
     "Kubernetes Advanced",
-    "Azure Admin With Azure DevOps"
+    "Azure Admin With Azure DevOps",
+    "Python for DevOps"
   ]
 }
