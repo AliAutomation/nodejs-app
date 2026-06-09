@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "nodejs-app",
-      script: "scripts/main.js",
+      script: "app.js",
       instances: 1,
       exec_mode: "fork",
       env: {
