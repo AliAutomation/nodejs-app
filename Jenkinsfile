@@ -127,9 +127,9 @@ pipeline {
                       --exclude=.git \
                       --exclude=coverage \
                       --exclude="${ARTIFACT_NAME}" \
-                      -czf ${ARTIFACT_NAME} .
+                      -czf /tmp/${ARTIFACT_NAME} .
 
-                      mv /tmp/${ARTIFACT_NAME}
+                      mv /tmp/${ARTIFACT_NAME} .
 
                     ls -lh ${ARTIFACT_NAME}
                 '''
