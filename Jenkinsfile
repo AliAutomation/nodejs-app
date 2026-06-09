@@ -20,16 +20,16 @@ pipeline {
     environment {
         APP_NAME = 'nodejs-app'
 
-        NODEJS_SERVER_IP = '172.31.39.158'
+        NODEJS_SERVER_IP = '13.51.98.92'
         NODEJS_SERVER_USER = 'ec2-user'
         REMOTE_PATH = '/home/ec2-user/nodejs-app'
 
-        NEXUS_URL = 'http://<NEXUS_EC2_IP>:8081'
+        NEXUS_URL = 'http://13.61.122.10:8081'
         NEXUS_REPOSITORY = 'nodejs-artifacts'
         ARTIFACT_NAME = "nodejs-app-${BUILD_NUMBER}.tar.gz"
         NEXUS_UPLOAD_PATH = "nodejs-app/${BUILD_NUMBER}/${ARTIFACT_NAME}"
 
-        EMAIL_RECIPIENTS = 'your-email@gmail.com'
+        EMAIL_RECIPIENTS = 'onlytouseandroid@gmail.com'
     }
 
     stages {
