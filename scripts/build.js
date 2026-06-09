@@ -26,3 +26,5 @@ archive.glob('**/*', {
 });
 
 archive.finalize();
+
+//#Script for building the application into a tar.gz archive, using environment variables for app name and version. It excludes node_modules, .git, and existing archives.
