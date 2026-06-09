@@ -120,12 +120,16 @@ pipeline {
                     set -e
 
                     rm -f ${ARTIFACT_NAME}
+                    rm -f /tmp/${ARTIFACT_NAME}
 
                     tar \
                       --exclude=node_modules \
                       --exclude=.git \
                       --exclude=coverage \
+                      --exclude="${ARTIFACT_NAME}" \
                       -czf ${ARTIFACT_NAME} .
+
+                      mv /tmp/${ARTIFACT_NAME}
 
                     ls -lh ${ARTIFACT_NAME}
                 '''
